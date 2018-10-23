@@ -1,23 +1,39 @@
-// @font-face {
-//   font-family: "Roboto";
-//   src: url("../fonts/Roboto/Roboto-Thin.ttf") format("ttf");
-//   font-weight: 100;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: "Roboto";
+  src:  url("../fonts/Roboto/roboto-100.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
 
-// @font-face {
-//   font-family: "Roboto";
-//   src: url("../fonts/Roboto/Roboto-Light.ttf") format("ttf");
-//   font-weight: 300;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: "Roboto";
+  src:  url("../fonts/Roboto/roboto-300.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
 
-// @font-face {
-//   font-family: "Roboto";
-//   src: url("../fonts/Roboto/Roboto-Regular.ttf") format("ttf");
-//   font-weight: 400;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: "Roboto";
+  src:  url("../fonts/Roboto/roboto-400.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+$border-color: #e5e5e5;
+$border-color-hover: #435993;
+$input-color: #c8c8c8;
+$checkbox-color: #435993;
+$dot-color: #b3b3b3;
+$bar-bg: #e8e8e8;
+$progressss-bar: #c9afef;
+$btn-color: #ffffff;
+$btn-color-hover: #435993;
+$btn-bg: #435993;
+$btn-bg-hover: #ffffff;
+$btn-border-hover: #435993;
+$nav-toggle: #77b5f0;
+$nav-item: #2cb0d8;
+
 
 body {
   margin: 0;
@@ -71,7 +87,6 @@ body {
   text-align: center;
   background-image: linear-gradient(0deg, rgba(255,255,255,1) 30%, rgba(255,255,255,0) 80%), url("../img/main-bg.jpg");
   background-size: cover;
-  // outline: 1px solid red;
 }
 
 .main__container {
@@ -117,15 +132,19 @@ h2 {
   padding: 12px;
   font-size: 24px;
   font-weight: 400;
-  color: #c8c8c8;
-  border: 2px solid #e5e5e5;
+  color: $input-color;
+  border: 2px solid $border-color;
   border-radius: 5px;
+
+  &:hover {
+    border-color: $border-color-hover;
+  }
 }
 
 .info input::placeholder {
   font-size: 24px;
   font-weight: 300;
-  color: #c8c8c8;
+  color: $input-color;
   text-align: center;
 }
 
@@ -135,8 +154,12 @@ h2 {
   height: 60px;
   margin: 0 auto;
   margin-bottom: 25px;
-  border: 2px solid #e5e5e5;
+  border: 2px solid $border-color;
   border-radius: 5px;
+
+  &:hover {
+    border-color: $border-color-hover;
+  }
 }
 
 .info__select:after {
@@ -146,7 +169,7 @@ h2 {
   height: 8px;
   border-style: solid;
   border-width: 2px;
-  border-color:  transparent transparent #435993 #435993;
+  border-color:  transparent transparent $border-color-hover $border-color-hover;
   pointer-events: none;
   top: 20px;
   right: 20px;
@@ -160,7 +183,7 @@ h2 {
   height: 100%;
   font-size: 24px;
   font-weight: 300;
-  color: #c8c8c8;
+  color: $input-color;
   background: none;
   border: none;
   appearance: none;
@@ -227,7 +250,7 @@ h2 {
     height: 18px;
     left: -30px;
     top: 0;
-    border: 2px solid #435993;
+    border: 2px solid $checkbox-color;
     border-radius: 5px;
   }
 }
@@ -240,7 +263,7 @@ h2 {
     height: 14px;
     left: -26px;
     top: 4px;
-    background: #435993;
+    background: $checkbox-color;
     border-radius: 3px;
   }
 }
@@ -255,7 +278,9 @@ h2 {
 
 .js__list {
   margin: 0;
+  margin-bottom: 5px;
   padding: 0;
+  padding-bottom: 30px;
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -263,9 +288,99 @@ h2 {
 }
 
 .js__item {
+  position: relative;
   font-size: 13px;
   line-height: 19px;
   font-weight: 300;
+}
+
+.js__item--1::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 2px;
+  background: $dot-color;
+  bottom: -10px;
+  left: 12px;
+  box-shadow: 0 3px 0 0 $dot-color, 0 6px 0 0 $dot-color, 0 9px 0 0 $dot-color,
+  0 12px 0 0 $dot-color, 0 15px 0 0 $dot-color, 0 18px 0 0 $dot-color; 
+}
+
+.js__item--2::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 2px;
+  background: $dot-color;
+  bottom: -10px;
+  right: 10px;
+  box-shadow: 0 3px 0 0 $dot-color, 0 6px 0 0 $dot-color, 0 9px 0 0 $dot-color,
+  0 12px 0 0 $dot-color, 0 15px 0 0 $dot-color, 0 18px 0 0 $dot-color; 
+}
+
+.js__item--3::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 2px;
+  background: $dot-color;
+  bottom: -10px;
+  right: 24px;
+  box-shadow: 0 3px 0 0 $dot-color, 0 6px 0 0 $dot-color, 0 9px 0 0 $dot-color,
+  0 12px 0 0 $dot-color, 0 15px 0 0 $dot-color, 0 18px 0 0 $dot-color; 
+}
+
+.js__item--4::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 2px;
+  background: $dot-color;
+  bottom: -10px;
+  right: 13px;
+  box-shadow: 0 3px 0 0 $dot-color, 0 6px 0 0 $dot-color, 0 9px 0 0 $dot-color,
+  0 12px 0 0 $dot-color, 0 15px 0 0 $dot-color, 0 18px 0 0 $dot-color; 
+}
+
+.rangeslider {
+  background: $bar-bg;
+}
+
+.rangeslider__fill {
+  background: $progressss-bar;
+}
+
+.rangeslider--horizontal {
+  height: 14px;
+}
+
+.rangeslider__handle {
+  border-style: none;
+  background: url("../img/icon-range.png") no-repeat center;  
+  width: 30px;
+  height: 30px;
+  box-shadow: none;
+}
+
+.rangeslider--horizontal 
+.rangeslider__handle {
+  top: 20px;
+}
+
+.rangeslider--vertical 
+.rangeslider__handle {
+  left: 30px;
+}
+
+.rangeslider,
+.rangeslider__fill {
+  display: block;
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+}
+
+.rangeslider__handle:after {
+  background-image: none;
 }
 
 .about {
@@ -296,9 +411,13 @@ textarea {
   font-family: "Roboto", sans-serif;
   font-size: 20px;
   font-weight: 400;
-  color: #c8c8c8;
-  border: 2px solid #e5e5e5;
+  color: $input-color;
+  border: 2px solid $border-color;
   border-radius: 5px;
+
+  &:hover {
+    border: 2px solid $border-color-hover;
+  }
 }
 
 textarea::placeholder {
@@ -307,18 +426,25 @@ textarea::placeholder {
   color: #c8c8c8;
 }
 
-button {
+.form__btn {
   display: block;
   width: 116px;
   margin: 0 auto;
   padding: 16px 0;
-  color: #ffffff;
+  color: $btn-color;
   font-size: 16px;
   font-weight: 300;
-  background: #435993;
+  background: $btn-bg;
   border-style: none;
   border-radius: 10px;
   cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background: $btn-bg-hover;
+    border: 2px solid $btn-border-hover;
+    color: $btn-color-hover;
+  }
 }
 
 @media (max-width: 767px) {
@@ -348,8 +474,8 @@ button {
     left: 15px;
     width: 26px;
     height: 3px;
-    background-color: #77b5f0;
-    box-shadow: 0 8px 0 0 #77b5f0, 0 16px 0 0 #77b5f0;
+    background-color: $nav-toggle;
+    box-shadow: 0 8px 0 0 $nav-toggle, 0 16px 0 0 $nav-toggle;
   }
   
   .nav--opened .nav__toggle::before,
@@ -360,7 +486,7 @@ button {
     left: 8px;
     width: 36px;
     height: 3px;
-    background-color: #77b5f0;
+    background-color: $nav-toggle;
   }
   
   .nav--opened .nav__toggle::before {
@@ -397,7 +523,7 @@ button {
     font-size: 20px;
 
     &:hover {
-      color: #2cb0d8;
+      color: $nav-item;
     }
   }
 
@@ -409,12 +535,8 @@ button {
     width: 100%;
   }
 
-  .js__list {
-    display: block;
-  }
-
   .js__item {
-    margin-bottom: 15px;
+    font-size: 10px;
   }
 
   .about p {

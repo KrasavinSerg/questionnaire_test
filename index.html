@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Анкета</title>
+  <link rel="stylesheet" href="css/rangeslider.css">
   <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400&amp;subset=cyrillic" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -33,7 +33,7 @@
   <main class="main">
     <h1 class="main__title">Анкета</h1>
     <div class="main__container">
-      <form action="#" method="POST">
+      <form class="form" action="#" method="POST">
         <fieldset class="info" id="info">
           <img class="info__img" src="img/icon-info.png" width="47" height="47" alt="инфо">
           <h2 class="info__title">Личная информация</h2>
@@ -64,21 +64,21 @@
           <div class="skills__wrapper">
             <ul class="skills__list">
               <li class="skills__item">
-                <input type="checkbox" name="skills" id="bem">
+                <input type="checkbox" name="skills" id="bem" checked>
                 <label for="bem">БЭМ/OOCSS</label>
               </li>
               <li class="skills__item">
-                <input type="checkbox" name="skills" id="preprocessor">
+                <input type="checkbox" name="skills" id="preprocessor" checked>
                 <label for="preprocessor">Stylus/LESS/SASS</label>
               </li>
               <li class="skills__item">
-                <input type="checkbox" name="skills" id="svg">
+                <input type="checkbox" name="skills" id="svg" checked>
                 <label for="svg">Работаю с SVG</label>
               </li>
             </ul>
             <ul class="skills__list">
               <li class="skills__item">
-                <input type="checkbox" name="skills" id="semantic">
+                <input type="checkbox" name="skills" id="semantic" checked>
                 <label for="semantic">Верстаю семантично</label>
               </li>
               <li class="skills__item">
@@ -86,7 +86,7 @@
                 <label for="es">ES2015/ES2016</label>
               </li>
               <li class="skills__item">
-                <input type="checkbox" name="skills" id="bild">
+                <input type="checkbox" name="skills" id="bild" checked>
                 <label for="bild">Gulp/GRUNT</label>
               </li>
             </ul>
@@ -96,11 +96,11 @@
                 <label for="Webpack">Webpack</label>
               </li>
               <li class="skills__item">
-                <input type="checkbox" name="skills" id="jQuery">
+                <input type="checkbox" name="skills" id="jQuery" checked>
                 <label for="jQuery">jQuery</label>
               </li>
               <li class="skills__item">
-                <input type="checkbox" name="skills" id="Git">
+                <input type="checkbox" name="skills" id="Git" checked>
                 <label for="Git">Ипользую Git</label>
               </li>
             </ul>
@@ -110,11 +110,12 @@
           <img class="js__img" src="img/icon-js.png" width="47" height="47" alt="инфо">
           <h2 class="js__title">Уровень владения JavaScript</h2>
           <ul class="js__list">
-            <li class="js__item">Не владею</li>
-            <li class="js__item">Использую готовые<br> решения</li>
-            <li class="js__item">Использую готовые решения<br> и умею переделывать</li>
-            <li class="js__item">Пишу сложный JS с нуля</li>
+            <li class="js__item js__item--1">Не владею</li>
+            <li class="js__item js__item--2">Использую готовые<br> решения</li>
+            <li class="js__item js__item--3">Использую готовые решения<br> и умею переделывать</li>
+            <li class="js__item js__item--4">Пишу сложный JS с нуля</li>
           </ul>
+          <input type="range"  min="0" max="3" value="1" step="1">
         </fieldset>
         <fieldset class="about" id="about">
           <img class="about__img" src="img/icon-about.png" width="47" height="47" alt="инфо">
@@ -122,11 +123,12 @@
           <p class="about__text">Напишите несколько предложений, чем привлекла наша вакансия и что вы ожидаете от работы у нас.</p>
           <textarea placeholder="Понравилась тем, что..."></textarea>
         </fieldset>
-        <button type="submit">Готово</button>
+        <button class="form__btn" type="submit">Готово</button>
       </form>
     </div>
   </main>
 <script src="js/jQuery3.3.1.min.js"></script> 
+<script src="js/rangeslider.min.js"></script>
 <script src="js/main.js"></script> 
 </body>
 </html>

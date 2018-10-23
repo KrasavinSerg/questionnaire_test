@@ -1,4 +1,25 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/roboto-100.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/roboto-300.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/roboto-400.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -108,6 +129,10 @@ h2 {
   border-radius: 5px;
 }
 
+.info input:hover {
+  border-color: #435993;
+}
+
 .info input::-webkit-input-placeholder {
   font-size: 24px;
   font-weight: 300;
@@ -144,6 +169,10 @@ h2 {
   margin-bottom: 25px;
   border: 2px solid #e5e5e5;
   border-radius: 5px;
+}
+
+.info__select:hover {
+  border-color: #435993;
 }
 
 .info__select:after {
@@ -268,7 +297,9 @@ h2 {
 
 .js__list {
   margin: 0;
+  margin-bottom: 5px;
   padding: 0;
+  padding-bottom: 30px;
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -282,9 +313,101 @@ h2 {
 }
 
 .js__item {
+  position: relative;
   font-size: 13px;
   line-height: 19px;
   font-weight: 300;
+}
+
+.js__item--1::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 2px;
+  background: #b3b3b3;
+  bottom: -10px;
+  left: 12px;
+  -webkit-box-shadow: 0 3px 0 0 #b3b3b3, 0 6px 0 0 #b3b3b3, 0 9px 0 0 #b3b3b3, 0 12px 0 0 #b3b3b3, 0 15px 0 0 #b3b3b3, 0 18px 0 0 #b3b3b3;
+          box-shadow: 0 3px 0 0 #b3b3b3, 0 6px 0 0 #b3b3b3, 0 9px 0 0 #b3b3b3, 0 12px 0 0 #b3b3b3, 0 15px 0 0 #b3b3b3, 0 18px 0 0 #b3b3b3;
+}
+
+.js__item--2::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 2px;
+  background: #b3b3b3;
+  bottom: -10px;
+  right: 10px;
+  -webkit-box-shadow: 0 3px 0 0 #b3b3b3, 0 6px 0 0 #b3b3b3, 0 9px 0 0 #b3b3b3, 0 12px 0 0 #b3b3b3, 0 15px 0 0 #b3b3b3, 0 18px 0 0 #b3b3b3;
+          box-shadow: 0 3px 0 0 #b3b3b3, 0 6px 0 0 #b3b3b3, 0 9px 0 0 #b3b3b3, 0 12px 0 0 #b3b3b3, 0 15px 0 0 #b3b3b3, 0 18px 0 0 #b3b3b3;
+}
+
+.js__item--3::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 2px;
+  background: #b3b3b3;
+  bottom: -10px;
+  right: 24px;
+  -webkit-box-shadow: 0 3px 0 0 #b3b3b3, 0 6px 0 0 #b3b3b3, 0 9px 0 0 #b3b3b3, 0 12px 0 0 #b3b3b3, 0 15px 0 0 #b3b3b3, 0 18px 0 0 #b3b3b3;
+          box-shadow: 0 3px 0 0 #b3b3b3, 0 6px 0 0 #b3b3b3, 0 9px 0 0 #b3b3b3, 0 12px 0 0 #b3b3b3, 0 15px 0 0 #b3b3b3, 0 18px 0 0 #b3b3b3;
+}
+
+.js__item--4::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 2px;
+  background: #b3b3b3;
+  bottom: -10px;
+  right: 13px;
+  -webkit-box-shadow: 0 3px 0 0 #b3b3b3, 0 6px 0 0 #b3b3b3, 0 9px 0 0 #b3b3b3, 0 12px 0 0 #b3b3b3, 0 15px 0 0 #b3b3b3, 0 18px 0 0 #b3b3b3;
+          box-shadow: 0 3px 0 0 #b3b3b3, 0 6px 0 0 #b3b3b3, 0 9px 0 0 #b3b3b3, 0 12px 0 0 #b3b3b3, 0 15px 0 0 #b3b3b3, 0 18px 0 0 #b3b3b3;
+}
+
+.rangeslider {
+  background: #e8e8e8;
+}
+
+.rangeslider__fill {
+  background: #c9afef;
+}
+
+.rangeslider--horizontal {
+  height: 14px;
+}
+
+.rangeslider__handle {
+  border-style: none;
+  background: url("../img/icon-range.png") no-repeat center;
+  width: 30px;
+  height: 30px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.rangeslider--horizontal
+.rangeslider__handle {
+  top: 20px;
+}
+
+.rangeslider--vertical
+.rangeslider__handle {
+  left: 30px;
+}
+
+.rangeslider,
+.rangeslider__fill {
+  display: block;
+  -webkit-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+}
+
+.rangeslider__handle:after {
+  background-image: none;
 }
 
 .about {
@@ -321,6 +444,10 @@ textarea {
   border-radius: 5px;
 }
 
+textarea:hover {
+  border: 2px solid #435993;
+}
+
 textarea::-webkit-input-placeholder {
   font-size: 20px;
   font-weight: 400;
@@ -345,7 +472,7 @@ textarea::placeholder {
   color: #c8c8c8;
 }
 
-button {
+.form__btn {
   display: block;
   width: 116px;
   margin: 0 auto;
@@ -357,6 +484,14 @@ button {
   border-style: none;
   border-radius: 10px;
   cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.form__btn:hover {
+  background: #ffffff;
+  border: 2px solid #435993;
+  color: #435993;
 }
 
 @media (max-width: 767px) {
@@ -436,11 +571,8 @@ button {
   .info__select {
     width: 100%;
   }
-  .js__list {
-    display: block;
-  }
   .js__item {
-    margin-bottom: 15px;
+    font-size: 10px;
   }
   .about p {
     width: 100%;
